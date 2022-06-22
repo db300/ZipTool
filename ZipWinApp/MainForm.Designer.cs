@@ -1,6 +1,6 @@
 ﻿namespace ZipWinApp
 {
-    partial class SharpZipTester
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -92,7 +92,7 @@
             this.chkShowPassword.TabIndex = 9;
             this.chkShowPassword.Text = "显示密码";
             this.chkShowPassword.UseVisualStyleBackColor = true;
-            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.ChkShowPassword_CheckedChanged);
             // 
             // numZipLevel
             // 
@@ -161,7 +161,7 @@
             this.btnZip.TabIndex = 2;
             this.btnZip.Text = "压缩";
             this.btnZip.UseVisualStyleBackColor = true;
-            this.btnZip.Click += new System.EventHandler(this.btnZip_Click);
+            this.btnZip.Click += new System.EventHandler(this.BtnZip_Click);
             // 
             // lstFile
             // 
@@ -173,9 +173,9 @@
             this.lstFile.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lstFile.Size = new System.Drawing.Size(585, 196);
             this.lstFile.TabIndex = 1;
-            this.lstFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstFile_DragDrop);
-            this.lstFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.lstFile_DragEnter);
-            this.lstFile.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lstFile_KeyUp);
+            this.lstFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.LstFile_DragDrop);
+            this.lstFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.LstFile_DragEnter);
+            this.lstFile.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LstFile_KeyUp);
             // 
             // saveFileDialog1
             // 
@@ -210,7 +210,7 @@
             this.btnUnzip.TabIndex = 10;
             this.btnUnzip.Text = "解压";
             this.btnUnzip.UseVisualStyleBackColor = true;
-            this.btnUnzip.Click += new System.EventHandler(this.btnUnzip_Click);
+            this.btnUnzip.Click += new System.EventHandler(this.BtnUnzip_Click);
             // 
             // chkShowUnzipPassword
             // 
@@ -221,7 +221,7 @@
             this.chkShowUnzipPassword.TabIndex = 9;
             this.chkShowUnzipPassword.Text = "显示密码";
             this.chkShowUnzipPassword.UseVisualStyleBackColor = true;
-            this.chkShowUnzipPassword.CheckedChanged += new System.EventHandler(this.chkShowUnzipPassword_CheckedChanged);
+            this.chkShowUnzipPassword.CheckedChanged += new System.EventHandler(this.ChkShowUnzipPassword_CheckedChanged);
             // 
             // txtUnzipPassword
             // 
@@ -247,8 +247,8 @@
             this.txtZipFile.Name = "txtZipFile";
             this.txtZipFile.Size = new System.Drawing.Size(412, 21);
             this.txtZipFile.TabIndex = 1;
-            this.txtZipFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtZipFile_DragDrop);
-            this.txtZipFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtZipFile_DragEnter);
+            this.txtZipFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.TxtZipFile_DragDrop);
+            this.txtZipFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.TxtZipFile_DragEnter);
             // 
             // label5
             // 
@@ -267,7 +267,7 @@
             this.btnChooseZipFile.TabIndex = 11;
             this.btnChooseZipFile.Text = "选择文件";
             this.btnChooseZipFile.UseVisualStyleBackColor = true;
-            this.btnChooseZipFile.Click += new System.EventHandler(this.btnChooseZipFile_Click);
+            this.btnChooseZipFile.Click += new System.EventHandler(this.BtnChooseZipFile_Click);
             // 
             // Form1
             // 

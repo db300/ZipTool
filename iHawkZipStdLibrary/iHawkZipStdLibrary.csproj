@@ -8,6 +8,7 @@
     <Copyright>Copyright © ColdDaddy 2022</Copyright>
     <PackageProjectUrl>https://github.com/db300/ZipTool</PackageProjectUrl>
     <RepositoryUrl>https://github.com/db300/ZipTool</RepositoryUrl>
+    <Version>1.0.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

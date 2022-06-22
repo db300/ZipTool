@@ -333,6 +333,7 @@ namespace iHawkZipStdLibrary
                             if (!string.IsNullOrEmpty(fileName) && fileName.Trim().Length > 0)
                             {
                                 var fileItem = new FileInfo(Path.Combine(destinationDirectory, zipEntry.Name));
+                                if (!Directory.Exists(fileItem.DirectoryName)) Directory.CreateDirectory(fileItem.DirectoryName);
                                 using (var writeStream = fileItem.Create())
                                 {
                                     var buffer = new byte[BufferSize];

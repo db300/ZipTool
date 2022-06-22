@@ -7,14 +7,14 @@ using iHawkZipStdLibrary;
 
 namespace ZipWinApp
 {
-    public partial class SharpZipTester : Form
+    public partial class MainForm : Form
     {
-        public SharpZipTester()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void btnZip_Click(object sender, EventArgs e)
+        private void BtnZip_Click(object sender, EventArgs e)
         {
             if (this.lstFile.Items.Count == 0)
             {
@@ -63,13 +63,13 @@ namespace ZipWinApp
         }
 
         //显示/隐藏压缩密码
-        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        private void ChkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             this.txtPassword.PasswordChar = this.chkShowPassword.Checked ? '\0' : '*';
         }
 
         //文件列表拖放效果
-        private void lstFile_DragEnter(object sender, DragEventArgs e)
+        private void LstFile_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -78,14 +78,14 @@ namespace ZipWinApp
         }
 
         //文件列表拖放
-        private void lstFile_DragDrop(object sender, DragEventArgs e)
+        private void LstFile_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             this.lstFile.Items.AddRange(files);
         }
 
         //文件列表删除选中项
-        private void lstFile_KeyUp(object sender, KeyEventArgs e)
+        private void LstFile_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
             {
@@ -98,7 +98,7 @@ namespace ZipWinApp
         }
 
         //选择要解压的文件
-        private void btnChooseZipFile_Click(object sender, EventArgs e)
+        private void BtnChooseZipFile_Click(object sender, EventArgs e)
         {
             if (this.openFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.OK)
             {
@@ -109,7 +109,7 @@ namespace ZipWinApp
         }
 
         //文件拖放效果
-        private void txtZipFile_DragEnter(object sender, DragEventArgs e)
+        private void TxtZipFile_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -118,20 +118,20 @@ namespace ZipWinApp
         }
 
         //文件拖放
-        private void txtZipFile_DragDrop(object sender, DragEventArgs e)
+        private void TxtZipFile_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             this.txtZipFile.Text = files[0];
         }
 
         //显示/隐藏解压密码
-        private void chkShowUnzipPassword_CheckedChanged(object sender, EventArgs e)
+        private void ChkShowUnzipPassword_CheckedChanged(object sender, EventArgs e)
         {
             this.txtUnzipPassword.PasswordChar = this.chkShowUnzipPassword.Checked ? '\0' : '*';
         }
 
         //执行文件解压
-        private void btnUnzip_Click(object sender, EventArgs e)
+        private void BtnUnzip_Click(object sender, EventArgs e)
         {
             string zipFile = this.txtZipFile.Text;
             if (!File.Exists(zipFile))
@@ -150,7 +150,8 @@ namespace ZipWinApp
 
             try
             {
-                if (SharpZip.DecomparessFile(zipFile, destFolder, password))
+                var s = SharpZip.DecomparessFile(zipFile, destFolder, password);
+                if (string.IsNullOrWhiteSpace(s))
                 {
                     MessageBox.Show("完成解压文件。", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Process.Start("explorer.exe", "/select, " + destFolder);//打开资源管理器并选中文件夹
