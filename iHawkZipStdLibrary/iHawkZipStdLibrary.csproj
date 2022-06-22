@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>ColdDaddy</Authors>
+    <Description>提供zip文件解/压缩功能</Description>
+    <Copyright>Copyright © ColdDaddy 2022</Copyright>
+    <PackageProjectUrl>https://github.com/db300/ZipTool</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/db300/ZipTool</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SharpZipLib" Version="1.3.3" />
+  </ItemGroup>
+
+</Project>
