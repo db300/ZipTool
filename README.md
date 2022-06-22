@@ -1,2 +1,3 @@
 # ZipTool
-zip解压缩工具
+
+基于[SharpZipLib](https://github.com/icsharpcode/SharpZipLib)的zip包解/压缩工具及相应的类库
