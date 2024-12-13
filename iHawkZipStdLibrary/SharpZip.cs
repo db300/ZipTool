@@ -244,8 +244,8 @@ namespace iHawkZipStdLibrary
 
                 using (var zipStream = new ZipOutputStream(File.Create(zipFilePath)))
                 {
-                    zipStream.Password = password; //设置密码
-                    zipStream.SetComment(comment); //添加注释
+                    if (!string.IsNullOrWhiteSpace(password)) zipStream.Password = password; //设置密码
+                    if (!string.IsNullOrWhiteSpace(comment)) zipStream.SetComment(comment); //添加注释
                     zipStream.SetLevel(CheckCompressionLevel(compressionLevel)); //设置压缩等级
 
                     foreach (var key in dictionaryList.Keys) //从字典取文件添加到压缩文件

@@ -10,7 +10,7 @@ namespace iHawkZipStdLibrary
     /// <summary>
     /// （obsolete）文件压缩、解压缩
     /// </summary>
-    public class FileCompression
+    public static class FileCompression
     {
         #region 加密、压缩文件
 
